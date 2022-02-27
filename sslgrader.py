@@ -21,7 +21,7 @@ hostname = options.url
 mozilla_trusted_ca = 'https://curl.haxx.se/ca/cacert.pem'
 
 def get_thumbprint():
-  return hashlib.sha256(der).hexdigest()
+  return hashlib.sha1(der).hexdigest()
 
 def get_days_to_expiry():
   days_to_expiry = datetime.strptime(cert['notAfter'], '%b %d %H:%M:%S %Y %Z')
