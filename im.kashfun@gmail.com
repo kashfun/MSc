@@ -108,7 +108,7 @@ for s in range(len(bfcracked)):
     newpass = str(bfcracked[s]) + random.choice(string.ascii_lowercase)
     bfcracked[s] = newpass
     fpass6.write(bfcracked[s] + "\n")
-    hashedsalt.append(hl.md5(bfcracked[s].encode()).hexdigest())
+    hashedsalt.append(hl.sha256(bfcracked[s].encode()).hexdigest())
     fsalted6.write(hashedsalt[s] + "\n")
 print("Salting completed!")
 
